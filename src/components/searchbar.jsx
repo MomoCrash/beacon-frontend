@@ -38,7 +38,7 @@ export function SearchBar() {
             localStorage.setItem("search_tag", searchData[1])
         }
 
-        navigate("/usersearch")
+        navigate("/beacon-frontend/usersearch")
         window.location.reload();
 
     }
