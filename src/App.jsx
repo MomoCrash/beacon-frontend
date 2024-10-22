@@ -26,11 +26,11 @@ function App() {
       <div>
         <CustomNavbar />
         <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/usersearch" element={<UserSearching />} />
-          <Route path="/register" element={ isLogged ? <Profile /> : <Register />} />
-          <Route path="/login" element={ isLogged ? <Profile /> : <Login />} />
-          <Route path="/profile" element={ isLogged ? <Profile /> : <Login />} />
+          <Route path="/beacon-frontend/" element={<Home />} />
+          <Route path="/beacon-frontend/usersearch" element={<UserSearching />} />
+          <Route path="/beacon-frontend/register" element={ isLogged ? <Profile /> : <Register />} />
+          <Route path="/beacon-frontend/login" element={ isLogged ? <Profile /> : <Login />} />
+          <Route path="/beacon-frontend/profile" element={ isLogged ? <Profile /> : <Login />} />
           <Route path="/beacon-frontend/in-game-profile" element={ isLogged ? <InGameProfile /> : <Register /> } />
           <Route path="/beacon-frontend/e-sport" element={ < Esports /> } />
           <Route path="/beacon-frontend/guide" element={<ListChampGuid />} />
