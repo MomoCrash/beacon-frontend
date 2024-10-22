@@ -30,14 +30,14 @@ export function CustomNavbar() {
                 <Navbar.Toggle aria-controls="basic-navbar-nav" />
                 <Navbar.Collapse id="basic-navbar-nav" className="justify-content-center">
                     <Nav className="mx-auto nav-center">
-                        <Nav.Link as={Link} to="/guide">GUIDES</Nav.Link>
-                        <Nav.Link as={Link} to="/usersearch">RECHERCHE DE JOUEUR</Nav.Link>
-                        <Nav.Link as={Link} to="/protips">ASTUCES</Nav.Link>
-                        <Nav.Link as={Link} to="/e-sport">E-SPORT</Nav.Link>
-                        <Nav.Link as={Link} to="/in-game-profile">TON SUIVI</Nav.Link>
+                        <Nav.Link as={Link} to="/beacon-frontend/guide">GUIDES</Nav.Link>
+                        <Nav.Link as={Link} to="/beacon-frontend/usersearch">RECHERCHE DE JOUEUR</Nav.Link>
+                        <Nav.Link as={Link} to="/beacon-frontend/protips">ASTUCES</Nav.Link>
+                        <Nav.Link as={Link} to="/beacon-frontend/e-sport">E-SPORT</Nav.Link>
+                        <Nav.Link as={Link} to="/beacon-frontend/in-game-profile">TON SUIVI</Nav.Link>
                     </Nav>
                     <Nav className="d-flex align-items-center">
-                        <Nav.Link href={localStorage.getItem("email") ? "/profile" : "/login"}>
+                        <Nav.Link href={localStorage.getItem("email") ? "/beacon-frontend/profile" : "/beacon-frontend/login"}>
                             <img
                                 src="/img/login_img.png"
                                 width="40"

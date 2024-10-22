@@ -18,6 +18,8 @@ function App() {
 
   const isLogged = localStorage.getItem("email") !== null
 
+  console.log("Loaded")
+
   return (
     <Router>
 
@@ -29,11 +31,11 @@ function App() {
           <Route path="/register" element={ isLogged ? <Profile /> : <Register />} />
           <Route path="/login" element={ isLogged ? <Profile /> : <Login />} />
           <Route path="/profile" element={ isLogged ? <Profile /> : <Login />} />
-          <Route path="/in-game-profile" element={ isLogged ? <InGameProfile /> : <Register /> } />
-          <Route path="/e-sport" element={ < Esports /> } />
-          <Route path="/guide" element={<ListChampGuid />} />
-          <Route path="/guide/:id" element={<ChampGuid />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="/beacon-frontend/in-game-profile" element={ isLogged ? <InGameProfile /> : <Register /> } />
+          <Route path="/beacon-frontend/e-sport" element={ < Esports /> } />
+          <Route path="/beacon-frontend/guide" element={<ListChampGuid />} />
+          <Route path="/beacon-frontend/guide/:id" element={<ChampGuid />} />
+          <Route path="/beacon-frontend/*" element={<NotFound />} />
         </Routes>
         <Footer />
       </div>

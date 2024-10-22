@@ -1,6 +1,6 @@
 @font-face {
     font-family: 'MADECarvingSoft';
-    src: url('/fonts/MADECarvingSoftPERSONALUSE-SemiBold.otf') format('truetype');
+    src: url('../fonts/MADECarvingSoftPERSONALUSE-SemiBold.otf') format('truetype');
 }
 
 .menu-container-menu {
@@ -14,7 +14,7 @@
     justify-content: flex-start;
     align-items: center;
     background-color: rgba(0, 0, 0, 1);
-    background-image: url('img/menu_img/background_menu_img.png');
+    background-image: url('/img/menu_img/background_menu_img.png');
     z-index: 1001;
     padding-top: 12%;
 }
