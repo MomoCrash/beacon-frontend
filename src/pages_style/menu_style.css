@@ -1,0 +1,76 @@
+@font-face {
+    font-family: 'MADECarvingSoft';
+    src: url('/fonts/MADECarvingSoftPERSONALUSE-SemiBold.otf') format('truetype');
+}
+
+.menu-container-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 1);
+    background-image: url('img/menu_img/background_menu_img.png');
+    z-index: 1001;
+    padding-top: 12%;
+}
+
+.card-carousel-menu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 250px;
+}
+
+.card-menu {
+    width: 326.4px;
+    height: 543.15px;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.3s, opacity 0.3s, box-shadow 0.3s;
+    opacity: 1;
+}
+
+.card-menu:hover {
+    transform: scale(1.15);
+    box-shadow: 0 0 20px 10px #60e7ff;
+}
+
+.card-menu img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-titles-menu {
+    display: flex;
+    justify-content: center;
+    gap: 280px;
+    width: 100%;
+    padding: 0 200px;
+    margin-top: 60px;
+}
+
+.card-title-menu {
+    font-size: 40px;
+    color: white !important;
+    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.8);
+    font-family: 'MADECarvingSoft', sans-serif;
+    text-align: center;
+    width: 307.2px;
+    margin: 0;
+    transition: color 0.3s;
+}
+
+.card-title-menu.highlighted {
+    color: #60e7ff !important;
+    transition: color 0.3s;
+}
+

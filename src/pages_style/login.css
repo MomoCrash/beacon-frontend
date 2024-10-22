@@ -1,0 +1,60 @@
+#wallpaper {
+    background: url('../../public/img/kha_zix_bg.jpg') no-repeat center center;
+    background-size: cover;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    opacity: 0.8;
+    z-index: -1;
+}
+
+body {
+    padding-right: 0px !important;
+    overflow-x: hidden !important;
+}
+
+.footer {
+    position: relative;
+}
+
+.beacon-font {
+    font-family: "BriskProRegular", sans-serif;
+}
+
+.icon {
+    width: 30px;
+    height: 30px;
+}
+
+.form-control {
+    display: flex;
+    margin: 0 auto;
+    justify-content: center;
+}
+
+.btn-primary {
+    background-color: #A596FF !important;
+    border-color: #A596FF !important;
+}
+.btn-primary:visited,
+.btn-primary:focus {
+    background-color: #C667F4 !important;
+    border-color: #C667F4 !important;
+}
+.btn-primary:hover,
+.btn-primary:active {
+    background-color: #5D51A1 !important;
+    border-color: #5D51A1 !important;
+}
+
+.cascading-right {
+    margin-right: -50px;
+}
+
+@media (max-width: 900px) {
+    .cascading-right {
+        margin-right: 0;
+    }
+}
