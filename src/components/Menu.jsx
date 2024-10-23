@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../pages_style/menu_style.css';
-import clickSound from '/img/menu_img/sound-effect-lol-for-beacon.mp3';
+import clickSound from '/beacon-frontend/img/menu_img/sound-effect-lol-for-beacon.mp3';
 
 function Menu({ onClose }) {
     const [isFirstVisit, setIsFirstVisit] = useState(false);
@@ -26,18 +26,18 @@ function Menu({ onClose }) {
     const cards = [
         {
             title: 'Traqueur de statistiques',
-            image: '/img/menu_img/Malphite_menu_img.png',
-            link: '/'
+            image: '/beacon-frontend/img/menu_img/Malphite_menu_img.png',
+            link: '/beacon-frontend/'
         },
         {
             title: 'Contenu pédagogique',
-            image: '/img/menu_img/Aatrox_menu_img.png',
-            link: '/guide'
+            image: '/beacon-frontend/img/menu_img/Aatrox_menu_img.png',
+            link: '/beacon-frontend/guide'
         },
         {
             title: 'E-sport',
-            image: '/img/menu_img/Leblanc_menu_img.png',
-            link: '/e-sport'
+            image: '/beacon-frontend/img/menu_img/Leblanc_menu_img.png',
+            link: '/beacon-frontend/e-sport'
         }
     ];
 

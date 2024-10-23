@@ -28,7 +28,7 @@ function Home() {
                 <meta http-equiv="pragma" content="no-cache"/>
                 <meta charSet="UTF-8"/>
                 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-                <link rel="shortcut icon" href="/img/logo_beacon.png"/>
+                <link rel="shortcut icon" href="/beacon-frontend/img/logo_beacon.png"/>
             </Helmet>
 
             <div id="wallpaper"></div>
@@ -47,7 +47,7 @@ function Home() {
 
                 <div className="content-container">
                     <Container className="content">
-                        <img className="title-image" src="/img/Beacon_Title.png" alt="BEACON" draggable="false"/>
+                        <img className="title-image" src="/beacon-frontend/img/Beacon_Title.png" alt="BEACON" draggable="false"/>
                         <SearchBar/>
                     </Container>
                 </div>

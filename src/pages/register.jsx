@@ -130,19 +130,19 @@ export default function Register() {
                                         <p className="beacon-font"> Ou inscrivez-vous avec : </p>
 
                                         <Button tag='a' color='none' className='mx-3'>
-                                            <Image draggable={false} src="/img/twitter.png" className="icon"
+                                            <Image draggable={false} src="/beacon-frontend/img/twitter.png" className="icon"
                                                    icon='twitter'
                                                    size="sm"/>
                                         </Button>
 
                                         <Button tag='a' color='none' className='mx-3'>
-                                            <a href="/beacon-frontend/#conn"> <Image draggable={false} src="/img/search.png"
+                                            <a href="/beacon-frontend/#conn"> <Image draggable={false} src="/beacon-frontend/img/search.png"
                                                                     className="icon"
                                                                     icon='google' size="sm"/> </a>
                                         </Button>
 
                                         <Button tag='a' color='none' className='mx-3'>
-                                            <Image draggable={false} src="/img/github.png" icon='github'
+                                            <Image draggable={false} src="/beacon-frontend/img/github.png" icon='github'
                                                    className="icon"
                                                    size="sm"/>
                                         </Button>

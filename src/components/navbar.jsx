@@ -9,7 +9,7 @@ export function CustomNavbar() {
             <Container fluid>
                 <Navbar.Brand href="/beacon-frontend/" className="brand-left d-flex align-items-center">
                     <img
-                        src="/img/logo_beacon.png"
+                        src="/beacon-frontend/img/logo_beacon.png"
                         width="60"
                         height="60"
                         className="d-inline-block align-top"
@@ -18,7 +18,7 @@ export function CustomNavbar() {
                     />
                     <span className="ms-2">
                         <img
-                            src="/img/Beacon_Title.png"
+                            src="/beacon-frontend/img/Beacon_Title.png"
                             width="100"
                             height="25"
                             alt="Beacon Title"
@@ -39,7 +39,7 @@ export function CustomNavbar() {
                     <Nav className="d-flex align-items-center">
                         <Nav.Link href={localStorage.getItem("email") ? "/beacon-frontend/profile" : "/beacon-frontend/login"}>
                             <img
-                                src="/img/login_img.png"
+                                src="/beacon-frontend/img/login_img.png"
                                 width="40"
                                 height="40"
                                 className="d-inline-block align-top"
@@ -49,7 +49,7 @@ export function CustomNavbar() {
                         </Nav.Link>
                         <Nav.Link href="/beacon-frontend/#language" className="flag-link">
                             <img
-                                src="/img/french_flag.png"
+                                src="/beacon-frontend/img/french_flag.png"
                                 width="40"
                                 height="25"
                                 className="d-inline-block align-top no-hover"

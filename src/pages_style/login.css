@@ -1,5 +1,5 @@
 #wallpaper {
-    background: url('../../public/img/kha_zix_bg.jpg') no-repeat center center;
+    background: url('/public/img/kha_zix_bg.jpg') no-repeat center center;
     background-size: cover;
     height: 100%;
     width: 100%;

@@ -66,7 +66,7 @@ export function SearchBar() {
                 </Dropdown.Menu>
             </Dropdown>
             <Button onClick={handleClick} variant="outline-success" className="search-button">
-                <img src="/img/loop.png" alt="loop_button_img" draggable="false" />
+                <img src="/beacon-frontend/img/loop.png" alt="loop_button_img" draggable="false" />
             </Button>
         </Form>
     )
