@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import '../pages_style/menu_style.css';
-import clickSound from '/beacon-frontend/img/menu_img/sound-effect-lol-for-beacon.mp3';
+import clickSound from '../assets/sound-effect-lol-for-beacon.mp3';
 
 function Menu({ onClose }) {
     const [isFirstVisit, setIsFirstVisit] = useState(false);
