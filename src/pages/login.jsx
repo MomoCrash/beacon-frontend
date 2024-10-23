@@ -28,9 +28,7 @@ export default function Login() {
                             TryToLogin(new User(values.mail, values.username + "#" + values.tag), values.password).then(result => {
 
                                 if (result) {
-                                    nav("/")
-                                } else {
-
+                                    nav("/beacon-frontend/")
                                 }
 
                             })
@@ -104,7 +102,7 @@ export default function Login() {
                                         </Button>
 
                                         <Button tag='a' color='none' className='mx-3'>
-                                            <a href="#conn"> <Image draggable={false} src="/img/search.png"
+                                            <a href="/beacon-frontend/#conn"> <Image draggable={false} src="/img/search.png"
                                                                     className="icon"
                                                                     icon='google' size="sm"/> </a>
                                         </Button>
@@ -119,7 +117,7 @@ export default function Login() {
                                 </CardBody>
                                 <CardFooter className="text-center beacon-font">
                                     <br/>
-                                    <a href="/register" style={{textDecoration: "none", color: "#2e1650"}}><p> Vous n'avez pas de
+                                    <a href="/beacon-frontend/register" style={{textDecoration: "none", color: "#2e1650"}}><p> Vous n'avez pas de
                                         compte ? Cliquez ici ! </p></a>
                                 </CardFooter>
                             </Card>

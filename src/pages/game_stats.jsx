@@ -63,7 +63,7 @@ class PlayerGameProfile {
                 return (
 
                     <CustomType className={"justify-content-md-center"} style={{margin: ".3rem"}} md={ pass <= HIGHLIGHTED_CHAMP ? 0 : 2} key={champ.name}>
-                        <a href={"/guide/" + champ.name} style={{textDecoration: "none"}}>
+                        <a href={"/beacon-frontend/guide/" + champ.name} style={{textDecoration: "none"}}>
                         <Card>
                             <CardHeader>
                                 <h2 style={{textAlign:"center"}}> {pass <= HIGHLIGHTED_CHAMP ? "Top " + pass : ""} </h2>

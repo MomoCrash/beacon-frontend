@@ -10,13 +10,13 @@ export default function Profile() {
 
     if (!localStorage.getItem("email")) {
 
-        navigate('/login');
+        navigate('/beacon-frontend/login');
 
     }
 
     function handleDisconnect() {
 
-        Disconnect().then(() => navigate("/"))
+        Disconnect().then(() => navigate("/beacon-frontend/"))
 
     }
 
@@ -39,7 +39,7 @@ export default function Profile() {
                         </CardBody>
 
                         <CardFooter className="text-center beacon-font">
-                            <a href="?disconnected=true" style={{textDecoration:"none", color:"#2e1650"}}> <p onClick={handleDisconnect}> Deconnexion </p> </a>
+                            <a href="/beacon-frontend/?disconnected=true" style={{textDecoration:"none", color:"#2e1650"}}> <p onClick={handleDisconnect}> Deconnexion </p> </a>
                         </CardFooter>
 
                     </Card>

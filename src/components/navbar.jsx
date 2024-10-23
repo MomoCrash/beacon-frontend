@@ -7,7 +7,7 @@ export function CustomNavbar() {
     return (
         <Navbar className="navbar-custom" expand="lg" fixed="top">
             <Container fluid>
-                <Navbar.Brand href="/" className="brand-left d-flex align-items-center">
+                <Navbar.Brand href="/beacon-frontend/" className="brand-left d-flex align-items-center">
                     <img
                         src="/img/logo_beacon.png"
                         width="60"
@@ -47,7 +47,7 @@ export function CustomNavbar() {
                                 draggable="false"
                             />
                         </Nav.Link>
-                        <Nav.Link href="#language" className="flag-link">
+                        <Nav.Link href="/beacon-frontend/#language" className="flag-link">
                             <img
                                 src="/img/french_flag.png"
                                 width="40"

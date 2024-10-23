@@ -136,7 +136,7 @@ export default function Register() {
                                         </Button>
 
                                         <Button tag='a' color='none' className='mx-3'>
-                                            <a href="#conn"> <Image draggable={false} src="/img/search.png"
+                                            <a href="/beacon-frontend/#conn"> <Image draggable={false} src="/img/search.png"
                                                                     className="icon"
                                                                     icon='google' size="sm"/> </a>
                                         </Button>
@@ -151,7 +151,7 @@ export default function Register() {
                                 </CardBody>
                                 <CardFooter className="text-center beacon-font">
                                     <br/>
-                                    <a href="/login" style={{textDecoration: "none", color: "#2e1650"}}><p> Vous avez un
+                                    <a href="/beacon-frontend/login" style={{textDecoration: "none", color: "#2e1650"}}><p> Vous avez un
                                         compte ? Cliquez ici ! </p></a>
                                 </CardFooter>
                             </Card>

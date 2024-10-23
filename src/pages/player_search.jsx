@@ -317,7 +317,7 @@ export default function UserSearching() {
                                                                          currentTarget.onerror = null; // prevents looping
                                                                          currentTarget.style.display = "none";
                                                                      }}/>
-                                                                <a href="#" onClick={() => {
+                                                                <a href="/beacon-frontend/#" onClick={() => {
                                                                     reload(participant.riotIdGameName, participant.riotIdTagline);
                                                                 }}> {participant.riotIdGameName}</a>
                                                             </span>
@@ -336,7 +336,7 @@ export default function UserSearching() {
                                                                          currentTarget.onerror = null; // prevents looping
                                                                          currentTarget.style.display = "none";
                                                                      }}/>
-                                                                <a href="#" onClick={() => {
+                                                                <a href="/beacon-frontend/#" onClick={() => {
                                                                     reload(participant.riotIdGameName, participant.riotIdTagline);
                                                                 }}> {participant.riotIdGameName}</a>
                                                             </span>
