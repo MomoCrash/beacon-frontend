@@ -1,14 +1,19 @@
-const requestOptions = {
+const postOptions = {
     method: 'POST',
     headers: {'Content-Type': 'application/json'},
-    'Access-Control-Allow-Origin': '*'
 }
 
 /*
  * Get a user infos with user puuid
  */
-export async function GetUserByPuuid(puuid, apiKey) {
-    return await fetch( "https://europe.api.riotgames.com/riot/account/v1/accounts/by-puuid/" + puuid + "/?api_key=" + apiKey)
+export async function GetUserByPuuid(puuid) {
+
+    let localRiotQuery = import.meta.env.VITE_BACKEND + "riot/user/puuid"
+    postOptions.body = JSON.stringify({
+        puuid: puuid,
+    })
+
+    return await fetch( localRiotQuery, postOptions)
         .then(response => response.json())
         .then(result => {
             return result
@@ -22,8 +27,15 @@ export async function GetUserByPuuid(puuid, apiKey) {
 /*
  * Get a user infos with username and game tag
  */
-export async function GetUserByNameTag(userName, gameTag, apiKey) {
-    return await fetch( "https://europe.api.riotgames.com/riot/account/v1/accounts/by-riot-id/" + userName + "/" + gameTag + "?api_key=" + apiKey)
+export async function GetUserByNameTag(userName, gameTag) {
+
+    let localRiotQuery = import.meta.env.VITE_BACKEND + "riot/user/gametag"
+    postOptions.body = JSON.stringify({
+        userName: userName,
+        gameTag: gameTag
+    })
+
+    return await fetch( localRiotQuery, postOptions)
         .then(response => response.json())
         .then(result => {
             return result
@@ -34,10 +46,14 @@ export async function GetUserByNameTag(userName, gameTag, apiKey) {
         });
 }
 
-export async function GetMatchData(matchId, apiKey) {
+export async function GetMatchData(matchId) {
 
-    let query = "https://europe.api.riotgames.com/lol/match/v5/matches/" + matchId + "?api_key=" + apiKey;
-    return await fetch(query)
+    let localRiotQuery = import.meta.env.VITE_BACKEND + "riot/match/"
+    postOptions.body = JSON.stringify({
+        matchId: matchId
+    })
+
+    return await fetch(localRiotQuery, postOptions)
         .then(response => response.json())
         .then(matchData => {
             return matchData;
@@ -57,11 +73,10 @@ export async function GetMatchData(matchId, apiKey) {
  * @param queue queueID https://static.developer.riotgames.com/docs/lol/queues.json
  * @param apikey the API key
  */
-export async function GetPlayerLastMatches(puuid, period, count, queue, apiKey) {
+export async function GetPlayerLastMatches(puuid, period, count) {
 
     let end_point = Math.floor(Date.now() / 1000)
     let start_point = end_point - 60 * 60 * 24 * period
-    let riotQuery = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid + "/ids?startTime=" + start_point + "&endTime=" + end_point + "&start=0&count=" + count + "&api_key=" + apiKey;
     {/*
     if (queue !== -1)
     {
@@ -72,23 +87,29 @@ export async function GetPlayerLastMatches(puuid, period, count, queue, apiKey) 
         riotQuery = "https://europe.api.riotgames.com/lol/match/v5/matches/by-puuid/" + puuid + "/ids?startTime=" + start_point + "&endTime=" + end_point + "&start=0&count=" + count + "&api_key=" + apiKey;
     }
     */}
+    let localRiotQuery = import.meta.env.VITE_BACKEND + "riot/user/matches"
     let localBaseQuery = import.meta.env.VITE_BACKEND + "match/data/"
 
     let matchesData = [];
 
-    {/*console.log(puuid)*/}
+    postOptions.body = JSON.stringify({
+        puuid: puuid,
+        startTime: start_point,
+        endTime: end_point,
+        count: count
+    });
 
-    await fetch(riotQuery)
+    await fetch(localRiotQuery, postOptions)
         .then(response => response.json())
         .then(async matchIds => {
 
-            {/*console.log(matchIds)*/}
+            console.log(matchIds)
 
             for (const matchId of matchIds) {
                 let localQuery = localBaseQuery + matchId
                 let loadedFromDatabase = false
 
-                await fetch(localQuery, requestOptions)
+                await fetch(localQuery, postOptions)
                     .then(response => response.json())
                     .then(async matches => {
                         if (matches.length > 0) {
@@ -99,9 +120,9 @@ export async function GetPlayerLastMatches(puuid, period, count, queue, apiKey) 
 
                 if (!loadedFromDatabase) {
 
-                    let matchData = await GetMatchData(matchId, apiKey)
+                    let matchData = await GetMatchData(matchId)
 
-                    let options = requestOptions
+                    let options = postOptions
                     options.body = {
                         id: matchData.metadata.matchId,
                         data: matchData.info
@@ -118,19 +139,7 @@ export async function GetPlayerLastMatches(puuid, period, count, queue, apiKey) 
             }
 
         }).catch(async error => {
-            let localQuery = localBaseQuery + matchId
-            let loadedFromDatabase = false
-
-            await fetch(localQuery, requestOptions)
-                .then(response => response.json())
-                .then(async matches => {
-                    if (matches.length > 0) {
-                        matchesData.push(matches[0])
-                        loadedFromDatabase = true
-                    }
-                })
-
-            console.log("Le service riot est indisponible...")
+            console.log("Le service riot est indisponible... Error : " + error.message)
         });
 
     return matchesData

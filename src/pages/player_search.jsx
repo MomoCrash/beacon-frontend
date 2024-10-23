@@ -18,8 +18,6 @@ export default function UserSearching() {
         oc: 'OCE',
     };
 
-    const key = import.meta.env.VITE_API_KEY_RIOT
-
     const [content, setContent] = useState(null);
     const [firstLoad, setFirstLoad] = useState(true);
 
@@ -63,45 +61,45 @@ export default function UserSearching() {
 
         if (firstLoad) {
             setFirstLoad(false)
-            updateMatchData(localStorage.getItem("search_username"), localStorage.getItem("search_tag"), key).then(result => {
+            updateMatchData(localStorage.getItem("search_username"), localStorage.getItem("search_tag")).then(result => {
                 setContent(result);
             })
         }
 
     }
-    async function updateSearchData(userName, gameTag, apiKey) {
-        if (userName == null || gameTag == null || apiKey == null) {
+    async function updateSearchData(userName, gameTag) {
+        if (userName == null || gameTag == null) {
             return null;
         }
 
-        await riot.GetUserByNameTag(userName, gameTag, apiKey).then(result => {
+        await riot.GetUserByNameTag(userName, gameTag).then(result => {
             localStorage.setItem('search_puuid', result.puuid);
             localStorage.setItem('search_username', result.gameName);
             localStorage.setItem('search_tag', result.tagLine);
         });
     }
 
-    async function getSearchData(search, region, apikey) {
+    async function getSearchData(search, region) {
         if (typeof search == "string") {
-            await updateSearchData(search, region, apikey);
+            await updateSearchData(search, region);
         } else if (search.length > 1) {
-            await updateSearchData(search[0], search[1], apikey);
+            await updateSearchData(search[0], search[1]);
         } else {
-            await updateSearchData(search[0], region, apikey);
+            await updateSearchData(search[0], region);
         }
     }
 
-    async function updateMatchData(search, region, apiKey) {
+    async function updateMatchData(search, region) {
 
-        await getSearchData(search, region, apiKey);
+        await getSearchData(search, region);
 
-        let matches = await riot.GetPlayerLastMatches(localStorage.getItem('search_puuid'), 30, 10, -1, apiKey);
+        let matches = await riot.GetPlayerLastMatches(localStorage.getItem('search_puuid'), 30, 10, -1);
         return displayMatches(matches)
 
     }
 
-    async function reload(userName, gameTag, apiKey){
-        await updateSearchData(userName, gameTag, apiKey);
+    async function reload(userName, gameTag){
+        await updateSearchData(userName, gameTag);
         window.location.reload();
     }
 
@@ -320,7 +318,7 @@ export default function UserSearching() {
                                                                          currentTarget.style.display = "none";
                                                                      }}/>
                                                                 <a href="#" onClick={() => {
-                                                                    reload(participant.riotIdGameName, participant.riotIdTagline, key);
+                                                                    reload(participant.riotIdGameName, participant.riotIdTagline);
                                                                 }}> {participant.riotIdGameName}</a>
                                                             </span>
                                                         )
@@ -339,7 +337,7 @@ export default function UserSearching() {
                                                                          currentTarget.style.display = "none";
                                                                      }}/>
                                                                 <a href="#" onClick={() => {
-                                                                    reload(participant.riotIdGameName, participant.riotIdTagline, key);
+                                                                    reload(participant.riotIdGameName, participant.riotIdTagline);
                                                                 }}> {participant.riotIdGameName}</a>
                                                             </span>
                                                         )
